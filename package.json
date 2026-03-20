@@ -1,7 +1,7 @@
 {
-	"name": "obsidian-sample-plugin",
+	"name": "obsidian-random-plus",
 	"version": "1.0.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
+	"description": "Like the core Random note plugin, but with folder exclusions.",
 	"main": "main.js",
 	"type": "module",
 	"scripts": {

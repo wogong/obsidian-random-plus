@@ -1,18 +1,18 @@
 import {App, PluginSettingTab, Setting} from "obsidian";
-import MyPlugin from "./main";
+import RandomNotePlugin from "./main";
 
-export interface MyPluginSettings {
-	mySetting: string;
+export interface RandomNoteSettings {
+	excludedFolders: string[];
 }
 
-export const DEFAULT_SETTINGS: MyPluginSettings = {
-	mySetting: 'default'
+export const DEFAULT_SETTINGS: RandomNoteSettings = {
+	excludedFolders: []
 }
 
-export class SampleSettingTab extends PluginSettingTab {
-	plugin: MyPlugin;
+export class RandomNoteSettingTab extends PluginSettingTab {
+	plugin: RandomNotePlugin;
 
-	constructor(app: App, plugin: MyPlugin) {
+	constructor(app: App, plugin: RandomNotePlugin) {
 		super(app, plugin);
 		this.plugin = plugin;
 	}
@@ -23,13 +23,17 @@ export class SampleSettingTab extends PluginSettingTab {
 		containerEl.empty();
 
 		new Setting(containerEl)
-			.setName('Settings #1')
-			.setDesc('It\'s a secret')
-			.addText(text => text
-				.setPlaceholder('Enter your secret')
-				.setValue(this.plugin.settings.mySetting)
+			.setName('Excluded folders')
+			.setDesc('Enter folders to exclude (one per line). For example, "Templates" or "Archive".')
+			.addTextArea(text => text
+				.setPlaceholder('Enter folders...')
+				.setValue(this.plugin.settings.excludedFolders.join('\n'))
 				.onChange(async (value) => {
-					this.plugin.settings.mySetting = value;
+					this.plugin.settings.excludedFolders = value.split('\n')
+						.map(s => s.trim())
+						.map(s => s.startsWith('/') ? s.slice(1) : s)
+						.map(s => s.endsWith('/') ? s.slice(0, -1) : s)
+						.filter(s => s.length > 0);
 					await this.plugin.saveSettings();
 				}));
 	}
