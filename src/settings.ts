@@ -24,9 +24,9 @@ export class RandomNoteSettingTab extends PluginSettingTab {
 
 		new Setting(containerEl)
 			.setName('Excluded folders')
-			.setDesc('Enter folders to exclude (one per line). For example, "Templates" or "Archive".')
+			.setDesc('Enter folders to exclude (one per line). For example, "templates" or "archive".')
 			.addTextArea(text => text
-				.setPlaceholder('Enter folders...')
+				.setPlaceholder('Enter excluded folders...')
 				.setValue(this.plugin.settings.excludedFolders.join('\n'))
 				.onChange(async (value) => {
 					this.plugin.settings.excludedFolders = value.split('\n')
