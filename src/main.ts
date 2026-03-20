@@ -1,4 +1,4 @@
-import {App, MarkdownView, Notice, Plugin, TFile} from 'obsidian';
+import {Notice, Plugin} from 'obsidian';
 import {DEFAULT_SETTINGS, RandomNoteSettings, RandomNoteSettingTab} from "./settings";
 
 export default class RandomNotePlugin extends Plugin {
@@ -7,15 +7,15 @@ export default class RandomNotePlugin extends Plugin {
 	async onload() {
 		await this.loadSettings();
 
-		this.addRibbonIcon('dice', 'Open Random Note', () => {
-			this.openRandomNote();
+		this.addRibbonIcon('dice', 'Open random note', () => {
+			void this.openRandomNote();
 		});
 
 		this.addCommand({
 			id: 'open-random-note',
-			name: 'Open Random Note',
+			name: 'Open random note',
 			callback: () => {
-				this.openRandomNote();
+				void this.openRandomNote();
 			}
 		});
 
