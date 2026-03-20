@@ -1,11 +1,10 @@
 {
 	"id": "random-note-plus",
 	"name": "Random Note Plus",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"minAppVersion": "0.15.0",
 	"description": "Like the core Random note plugin, but with folder exclusions.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"author": "wogong",
+	"authorUrl": "https://github.com/wogong",
 	"isDesktopOnly": false
 }
