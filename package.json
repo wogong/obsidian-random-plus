@@ -1,5 +1,5 @@
 {
-	"name": "obsidian-random-plus",
+	"name": "random-note-plus",
 	"version": "1.0.0",
 	"description": "Like the core Random note plugin, but with folder exclusions.",
 	"main": "main.js",

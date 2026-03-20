@@ -25,7 +25,7 @@ Random Note Plus is an Obsidian community plugin that opens a random note while 
    ```
 2. Copy `main.js`, `manifest.json`, and `styles.css` to:
    ```text
-   <Vault>/.obsidian/plugins/obsidian-random-plus/
+   <Vault>/.obsidian/plugins/random-note-plus/
    ```
 3. In Obsidian, go to **Settings → Community plugins**, then enable **Random Note Plus**.
 
@@ -49,7 +49,7 @@ npm run dev
 
 ## Compatibility
 
-- Plugin ID: `obsidian-random-plus`
+- Plugin ID: `random-note-plus`
 - Minimum Obsidian version: `0.15.0`
 - Desktop only: `false`
 
@@ -58,5 +58,5 @@ npm run dev
 For local testing, make sure your plugin folder name in the vault matches the plugin ID in `manifest.json`:
 
 ```text
-.obsidian/plugins/obsidian-random-plus/
+.obsidian/plugins/random-note-plus/
 ```
