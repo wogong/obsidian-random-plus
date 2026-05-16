@@ -1,6 +1,6 @@
 {
 	"name": "random-note-plus",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Like the core Random note plugin, but with folder exclusions.",
 	"main": "main.js",
 	"type": "module",

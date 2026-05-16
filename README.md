@@ -16,6 +16,12 @@ Random Note Plus is an Obsidian community plugin that opens a random note while 
 - Leading and trailing slashes are normalized (for example `/Archive/` becomes `Archive`)
 - Matching is prefix-based on folder path
 
+## Privacy
+
+Random Note Plus runs entirely inside Obsidian and does not make network requests.
+
+When you use **Open random note**, the plugin asks Obsidian for the list of Markdown files in the vault so it can remove excluded folders and choose one eligible note. It uses file paths for that selection only, does not read note contents, and does not store or transmit the file list.
+
 ## Install (manual)
 
 1. Build the plugin:
@@ -50,7 +56,7 @@ npm run dev
 ## Compatibility
 
 - Plugin ID: `random-note-plus`
-- Minimum Obsidian version: `0.15.0`
+- Minimum Obsidian version: `0.16.0`
 - Desktop only: `false`
 
 ## Notes for local development

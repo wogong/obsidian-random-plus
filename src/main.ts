@@ -23,6 +23,7 @@ export default class RandomNotePlugin extends Plugin {
 	}
 
 	async openRandomNote() {
+		// Enumerate Markdown file paths only after the user invokes the command.
 		const files = this.app.vault.getMarkdownFiles();
 		const excludedFolders = this.settings.excludedFolders;
 
